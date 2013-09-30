@@ -9,4 +9,21 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Photosite::Application.config.secret_key_base = 'f9bf6e863ecdf0741cd3cfa9e92b391b8879df027083e14cde4ed1d64779e726c06841512f212bb69e08891f0f588e60eb1c4b65d360fc35e1525926f6b72a62'
+
+
+require 'securerandom'
+
+def secure_token
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+    # Use the existing token.
+    File.read(token_file).chomp
+  else
+    # Generate a new token and store it in token_file.
+    token = SecureRandom.hex(64)
+    File.write(token_file, token)
+    token
+  end
+end
+
+SampleApp::Application.config.secret_key_base = secure_token
