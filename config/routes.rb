@@ -1,7 +1,7 @@
 Photosite::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  match '/tirowka', to: 'sessions#new',     via: 'get'
+  match '/tirowka', to: 'admin_panel#index', via: 'get', as: 'admin_panel'
   match '/signout', to: 'sessions#destroy', via: 'delete'  
 
   get "static_pages/home"

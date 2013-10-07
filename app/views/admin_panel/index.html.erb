@@ -1,0 +1,4 @@
+<h1>Controll panel</h1>
+<% if signed_in? %>
+	<%= link_to "Sign out", signout_path, method: "delete" %>
+<% end %>
