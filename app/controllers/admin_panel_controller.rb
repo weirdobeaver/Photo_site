@@ -1,6 +1,8 @@
 class AdminPanelController < ApplicationController
 before_filter :authenticate
 	def index
+		@photo_adds = PhotoAdd.all
+        @photo_add = current_user.photo_adds.build if signed_in?
 	end
 
 	private

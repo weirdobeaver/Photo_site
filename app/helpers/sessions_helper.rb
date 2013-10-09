@@ -1,11 +1,11 @@
 module SessionsHelper
-	def sign_in(user)
-	  reset_session
-	  session[:current_user_id] = user.id
-	  self.current_user = user
-	end
+	  def sign_in(user)
+	    reset_session
+	    session[:current_user_id] = user.id
+	    self.current_user = user
+	  end
 
-	def current_user=(user)
+	  def current_user=(user)
       @current_user = user
     end
 
@@ -30,6 +30,13 @@ module SessionsHelper
 
     def current_user?(user)
       user == current_user
+    end
+
+    def signed_in_user
+      unless signed_in?
+        store_location
+        redirect_to signin_url, notice: "Please sign in."
+      end
     end
 
 end

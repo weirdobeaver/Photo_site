@@ -1,4 +1,12 @@
 <h1>Controll panel</h1>
 <% if signed_in? %>
 	<%= link_to "Sign out", signout_path, method: "delete" %>
+	<div class="span8">
+      <ol class="microposts">
+        <%= render @photo_adds %>
+      </ol>
+      <section>
+        <%= render 'shared/photo_add_form' %>
+      </section>
+  	</div>
 <% end %>

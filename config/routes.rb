@@ -1,4 +1,6 @@
 Photosite::Application.routes.draw do
+  root 'static_pages#home'
+  resources :photo_adds, only: [:create, :destroy]
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   match '/tirowka', to: 'admin_panel#index', via: 'get', as: 'admin_panel'
