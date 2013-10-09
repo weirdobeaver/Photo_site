@@ -1,5 +1,6 @@
 class PhotoAddsController < ApplicationController
-before_action :signed_in_user
+  before_action :signed_in_user
+  before_action :correct_user,   only: :destroy
 
 	def index
 	end
@@ -15,10 +16,17 @@ before_action :signed_in_user
 	end
 
 	def destroy
+		@photo_add.destroy
+    	redirect_to admin_panel_path
 	end
 
 	private
 	def photo_add_params
       params.require(:photo_add).permit(:content)
+    end
+
+    def correct_user
+      @photo_add = current_user.photo_adds.find_by(id: params[:id])
+      redirect_to admin_panel_path if @photo_add.nil?
     end
 end

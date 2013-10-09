@@ -3,4 +3,9 @@
   <span class="timestamp">
     Added <%= time_ago_in_words(photo_add.created_at) %> ago.
   </span>
+  <% if current_user?(photo_add.user) %>
+  <%= link_to "delete", photo_add, method: :delete,
+                                   data: { confirm: "You sure?" },
+                                   title: photo_add.content %>
+  <% end %>
 </li>
