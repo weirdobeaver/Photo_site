@@ -3,6 +3,7 @@ class PhotoAddsController < ApplicationController
   before_action :correct_user,   only: :destroy
 
 	def index
+    @photo_adds = PhotoAdd.paginate(:page => params[:page], :per_page => 1)
 	end
 
 	def create

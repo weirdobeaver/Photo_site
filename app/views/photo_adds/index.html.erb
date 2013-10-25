@@ -3,26 +3,18 @@
 	<div class="row">
         <div class="box">
           <div class="col-lg-12 text-center">
-            <div id="carousel-example-generic" class="carousel slide">
-              
+            <div id="carousel-example-generic" class="carousel slide"> 
               <!-- Wrapper for slides -->
               <div class="carousel-inner">
-                <div class="item active">
-              	  <% will_paginate %>
-                    <% @photo_add.each do |photo_add| %>
-                    <!-- partial -->
+                <div class="item active">              	   
+                  <%= photo_for @photo_add %>                                 
                 </div>
-                <% will_paginate %>
-                <% end %>
               </div>
             </div>
           </div>
-          <p id="previous">
-			<a class="prevnext" href=<% @photo_add.next%>>Poprzednie</a>
-		  <p>
-		  <p id="next">
-			<a class="prevnext" href=#>Nastepne</a>
-		  <p>
+          <div class="paginate">
+          <%= will_paginate @photo_adds %>
+          </div>
         </div>
 	</div>
 </div>
