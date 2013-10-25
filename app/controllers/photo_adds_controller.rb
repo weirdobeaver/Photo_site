@@ -1,5 +1,5 @@
 class PhotoAddsController < ApplicationController
-  before_action :signed_in_user
+  before_action :signed_in_user, except: [:index]
   before_action :correct_user,   only: :destroy
 
 	def index
