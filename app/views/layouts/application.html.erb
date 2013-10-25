@@ -30,12 +30,12 @@
           <a class="brand" href="static_pages/home">Fotografia Barbara Dąbek</a>
           <div class="nav-collapse">
             <ul class="nav">
-              <li class="active"><%= link_to "Home", root_path %></li>
-              <li><%= link_to "Portfolio", portfolio_path %></li>
-              <li><%= link_to "Oferta", offer_path %></li>
-              <li><%= link_to "O mnie", about_path %></li>
-              <li><%= link_to "Kontakt", contact_path %></li>
-            </ul>
+              <li class="<%= "active" if @current_page == "/home" %>"><%= link_to "Home", root_path %></li>
+              <li class="<%= "active" if @current_page == "/portfolio" %>"><%= link_to "Portfolio", portfolio_path %></li>
+              <li class="<%= "active" if @current_page == "/offer" %>"><%= link_to "Oferta", offer_path %></li>
+              <li class="<%= "active" if @current_page == "/about" %>"><%= link_to "O mnie", about_path %></li>
+              <li class="<%= "active" if @current_page == "/contact" %>"><%= link_to "Kontakt", contact_path %></li>
+            </ul> 
           </div><!--/.nav-collapse -->
         </div>
       </div>

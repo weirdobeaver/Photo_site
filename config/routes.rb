@@ -7,7 +7,7 @@ Photosite::Application.routes.draw do
   match '/tirowka',   to: 'admin_panel#index',      via: 'get', as: 'admin_panel'
   match '/signout',   to: 'sessions#destroy',       via: 'delete'  
   match '/about',     to: 'static_pages#about',     via: 'get'
-  match '/portfolio', to: 'static_pages#portfolio', via: 'get'
+  match '/portfolio', to: 'photo_adds#index',      via: 'get'
   match '/offer',     to: 'static_pages#offer',     via: 'get'
   match '/contact',   to: 'static_pages#contact',   via: 'get'
   get "static_pages/home"
