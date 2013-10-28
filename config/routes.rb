@@ -3,6 +3,7 @@ Photosite::Application.routes.draw do
   resources :photo_adds, only: [:create, :destroy]
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :contact_forms, only: [:new, :create]
   
   match '/tirowka',   to: 'admin_panel#index',      via: 'get', as: 'admin_panel'
   match '/signin',    to: 'sessions#new',           via: 'get'
@@ -10,7 +11,6 @@ Photosite::Application.routes.draw do
   match '/about',     to: 'static_pages#about',     via: 'get'
   match '/portfolio', to: 'photo_adds#index',       via: 'get'
   match '/offer',     to: 'static_pages#offer',     via: 'get'
-  match '/contact',   to: 'static_pages#contact',   via: 'get'
   get "static_pages/home"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
