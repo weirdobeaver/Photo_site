@@ -27,7 +27,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="static_pages/home">Fotografia Barbara Dąbek</a>
+          <a class="brand" <%= link_to "Fotografia Barbara Dąbek", root_path %></a>
           <div class="nav-collapse">
             <ul class="nav">
               <li class="<%= "active" if @current_page == "/home" %>"><%= link_to "Home", root_path %></li>
