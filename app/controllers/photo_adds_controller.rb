@@ -4,6 +4,7 @@ class PhotoAddsController < ApplicationController
 
 	def index
     @photo_adds = PhotoAdd.paginate(:page => params[:page], :per_page => 1)
+    @current_page = "/portfolio"
 	end
 
 	def create

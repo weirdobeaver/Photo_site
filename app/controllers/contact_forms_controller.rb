@@ -1,6 +1,7 @@
 class ContactFormsController < ApplicationController
 	def new
 		@contact = ContactForm.new
+		@current_page = "/contact"
 	end
 
 	def create
