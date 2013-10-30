@@ -10,7 +10,10 @@
                   <%= photo_for @photo_add %> 
                   <% photo = @photo_adds[0] %>
                   <br>
-                  <div class="opis"><%= photo.content %></div>                            
+                  <div class="opis"><%= if photo != nil
+                                        photo.content
+                                        else "Sample foto"
+                                        end %></div>                            
                 </div>
               </div>
             </div>
