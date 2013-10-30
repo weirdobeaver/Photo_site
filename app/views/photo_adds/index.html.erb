@@ -6,17 +6,17 @@
             <div id="carousel-example-generic" class="carousel slide"> 
               <!-- Wrapper for slides -->
               <div class="carousel-inner">
-                <div class="item active">              	   
-                  <%= if @photo_add != nil
-                      photo_for @photo_add
-                      else image_tag("bober.jpg")
-                      end %> 
-                  <% photo = @photo_adds[0] %>
-                  <br>
-                  <div class="opis"><%= if photo != nil
-                                        photo.content
-                                        else "Sample foto"
-                                        end %></div>                            
+                <div class="item active"> 
+                <% if @photo_adds.size != 0 %>
+                    <%= photo_for @photo_add %>
+                    <%= photo = @photo_adds[0] %>
+                    <br>
+                    <div class="opis"><%= photo.content %></div>
+                <% else %>
+                    <%= image_tag("bober.jpg") %>
+                    <br>
+                    <div class="opis">Sample photo</div>
+                <%end %>                           
                 </div>
               </div>
             </div>
