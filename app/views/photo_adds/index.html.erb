@@ -12,6 +12,8 @@
                     <%= photo_for photo %>         
                     <br>
                     <div class="opis"><%= photo.content %></div>
+                    <br>
+                    <%= thumb_for photo %>
                 <% else %>
                     <%= image_tag("bober.jpg") %>
                     <br>

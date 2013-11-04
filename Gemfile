@@ -41,6 +41,7 @@ gem 'jbuilder', '~> 1.0.2'
 gem 'mail_form'
 gem 'simple_form'
 gem 'carrierwave'
+gem 'mini_magick'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
