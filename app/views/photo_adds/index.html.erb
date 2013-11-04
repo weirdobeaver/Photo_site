@@ -8,8 +8,8 @@
               <div class="carousel-inner">
                 <div class="item active"> 
                 <% if @photo_adds.size != 0 %>
-                    <%= photo_for @photo_add %>
-                    <%= photo = @photo_adds[0] %>
+                    <% photo = @photo_adds[0] %>
+                    <%= photo_for photo %>         
                     <br>
                     <div class="opis"><%= photo.content %></div>
                 <% else %>
