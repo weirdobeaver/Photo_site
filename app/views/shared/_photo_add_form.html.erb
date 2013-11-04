@@ -1,8 +1,11 @@
 <%= form_for(@photo_add) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
-    <%= f.text_area :content, placeholder: "Add new photo" %>
+  	<%= f.file_field :picture, placeholder: "Wstaw zdjęcie" %>
   </div>
-  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+  <div class="field">
+    <%= f.text_area :content, placeholder: "Dodaj opis" %>
+  </div>
+  <%= f.submit "Dodaj", class: "btn btn-large btn-primary" %>
   
 <% end %>

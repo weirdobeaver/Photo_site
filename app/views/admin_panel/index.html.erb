@@ -4,7 +4,10 @@
 	<%= link_to "Sign out", signout_path, method: "delete" %>
 	<div class="span8">
       <ol class="microposts">
-        <%= render @photo_adds %>
+      	<% @photo_adds.each do |photo| %>
+        	<%= render photo %>
+        	<%= thumb_for photo %>
+      	<% end %>
       </ol>
       <section>
         <%= render 'shared/photo_add_form' %>

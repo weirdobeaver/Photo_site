@@ -9,6 +9,7 @@ class PhotoAddsController < ApplicationController
 
 	def create
 	  @photo_add = current_user.photo_adds.build(photo_add_params)
+    @photo_add.avatar = params[:photo_add][:picture]
       if @photo_add.save
         flash[:success] = "Photo Added!"
         redirect_to admin_panel_path
@@ -23,7 +24,7 @@ class PhotoAddsController < ApplicationController
 	end
 
 	private
-	def photo_add_params
+	  def photo_add_params
       params.require(:photo_add).permit(:content)
     end
 
