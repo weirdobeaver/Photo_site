@@ -4,8 +4,14 @@ class PhotoAddsController < ApplicationController
 
 	def show
     @photo_add = PhotoAdd.find_by(params[:id])
-    @current_page = "/portfolio"
+    
 	end
+
+  def index
+    @photo_adds = PhotoAdd.paginate(:page => params[:page], :per_page => 9)
+    @current_page = "/portfolio"
+  end
+
 
 	def create
 	  @photo_add = current_user.photo_adds.build(photo_add_params)

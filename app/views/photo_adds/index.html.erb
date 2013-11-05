@@ -6,16 +6,19 @@
             <div id="carousel-example-generic" class="carousel slide"> 
               <!-- Wrapper for slides -->
               <div class="carousel-inner">
-                <div class="item active"> 
-                <% if @photo_adds.size != 0 %>
-                    <% photo = @photo_adds[0] %>
-                    <%= photo_for photo %>         
-                    <br>
-                    <div class="opis"><%= photo.content %></div>
-                    <br>
-                    <div>
-                    <%= thumb_for photo %>
-                    </div>
+                <div class="item active">
+                  <ul class="microposts"> 
+                    <% if @photo_adds.size != 0 %>
+                      <% photo = @photo_adds[0] %> 
+                      <% @photo_adds.each do |photo| %>
+                      <div class="column3">
+                        <%= thumb_for photo %> 
+                        <br>
+                        <div class="opis"><%= photo.content %></div>
+                        <br>
+                      </div>
+                    <% end %>
+                  </ul>
                 <% else %>
                     <%= image_tag("bober.jpg") %>
                     <br>
@@ -26,16 +29,8 @@
             </div>
           </div>
           <div class="paginate">
-          <%= will_paginate @photo_adds %>
-          </div>
+            <%= will_paginate @photo_adds %>
+          </div> 
         </div>
 	</div>
 </div>
-
-<!--<div class="row">
-  <div class="col-sm-6 col-md-3">
-    <a href="#" class="thumbnail">
-      <img src="bober.jpg" alt="..." height="180" width="171">
-    </a>
-  </div>  
-</div>-->
