@@ -1,7 +1,7 @@
 class AdminPanelController < ApplicationController
 before_filter :authenticate
 	def index
-		@photo_adds = PhotoAdd.all
+		@photo_adds = PhotoAdd.paginate(:page => params[:page], :per_page => 9)
         @photo_add = current_user.photo_adds.build if signed_in?
 	end
 

@@ -28,6 +28,9 @@
               <li class="<%= "active" if @current_page == "/offer" %>"><%= link_to "Oferta", offer_path %></li>
               <li class="<%= "active" if @current_page == "/about" %>"><%= link_to "O mnie", about_path %></li>
               <li class="<%= "active" if @current_page == "/contact" %>"><%= link_to "Kontakt", new_contact_form_path %></li>
+              <% if signed_in? %>
+              <li id="signout-btn"><%= link_to "Sign out", signout_path, method: "delete" %></li>
+              <% end %>
             </ul> 
           </div><!--/.nav-collapse -->
         </div>
