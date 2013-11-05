@@ -3,8 +3,7 @@ class PhotoAddsController < ApplicationController
   before_action :correct_user,   only: :destroy
 
 	def show
-    @photo_add = PhotoAdd.find_by(params[:id])
-    
+    @photo_add = PhotoAdd.find(params[:id])
 	end
 
   def index

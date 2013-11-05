@@ -8,22 +8,17 @@
               <div class="carousel-inner">
                 <div class="item active">
                   <ul class="microposts"> 
-                    <% if @photo_adds.size != 0 %>
-                      <% photo = @photo_adds[0] %> 
+                    <% if @photo_adds.size != 0 %> 
                       <% @photo_adds.each do |photo| %>
-                      <div class="column3">
-                        <%= main_page_thumb_for photo %> 
-                        <br>
-                        <div class="opis"><%= photo.content %></div>
-                        <br>
-                      </div>
-                    <% end %>
-                  </ul>
-                <% else %>
-                    <%= image_tag("bober.jpg") %>
-                    <br>
-                    <div class="opis">Sample photo</div>
-                <%end %>                           
+                        <div class="column3">
+                          <%= link_to main_page_thumb_for(photo), photo %>
+                          <br>
+                        </div>
+                      <% end %>
+                    <% else %>
+                      <%= image_tag("bober.jpg") %>
+                    <%end %>  
+                  </ul>                         
                 </div>
               </div>
             </div>

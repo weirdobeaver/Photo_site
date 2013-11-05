@@ -7,17 +7,10 @@
               <!-- Wrapper for slides -->
               <div class="carousel-inner">
                 <div class="item active"> 
-                <% if @photo_add != 0 %>
-                    <% photo = @photo_add %>
-                    <%= photo_for photo %>         
+                    <%= photo_for @photo_add %>        
                     <br>
-                    <div class="opis"><%= photo.content %></div>
-                    <br>
-                <% else %>
-                    <%= image_tag("bober.jpg") %>
-                    <br>
-                    <div class="opis">Sample photo</div>
-                <%end %>                           
+                    <div class="opis"><%= @photo_add.content %></div>
+                    <br>                         
                 </div>
               </div>
             </div>

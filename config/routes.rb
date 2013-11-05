@@ -1,6 +1,6 @@
 Photosite::Application.routes.draw do
   root 'static_pages#home'
-  resources :photo_adds, only: [:create, :destroy]
+  resources :photo_adds, only: [:create, :destroy, :show]
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :contact_forms, only: [:new, :create]
