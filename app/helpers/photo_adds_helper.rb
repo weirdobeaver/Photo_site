@@ -6,4 +6,8 @@ module PhotoAddsHelper
   	def thumb_for(photo_add)
   		image_tag(photo_add.avatar.thumb.url)
   	end
+
+  	def main_page_thumb_for(photo_add)
+  		image_tag(photo_add.avatar.main_page.url)
+  	end
 end
