@@ -44,6 +44,7 @@ gem 'mail_form'
 gem 'simple_form'
 gem 'carrierwave'
 gem 'carrierwave-postgresql'
+gem 'postgresql_lo_streamer'
 gem 'mini_magick'
 
 

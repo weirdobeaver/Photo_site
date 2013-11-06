@@ -4,10 +4,10 @@ module PhotoAddsHelper
   	end
 
   	def thumb_for(photo_add)
-  		image_tag(photo_add.avatar.thumb.url)
+  		image_tag(photo_add.avatar.url, :class => "small_thumb")
   	end
 
   	def main_page_thumb_for(photo_add)
-  		image_tag(photo_add.avatar.main_page.url)
+  		image_tag(photo_add.avatar.url, :class => "thumb")
   	end
 end

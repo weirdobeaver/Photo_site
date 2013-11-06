@@ -1,4 +1,5 @@
 Photosite::Application.routes.draw do
+  mount PostgresqlLoStreamer::Engine => "/photoadd_avatar"
   root 'static_pages#home'
   resources :photo_adds, only: [:create, :destroy, :show]
   resources :users
