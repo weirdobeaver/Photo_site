@@ -15,13 +15,13 @@ class PhotoAddsController < ApplicationController
 	def create
 	  @photo_add = current_user.photo_adds.build(photo_add_params)
     @photo_add.avatar = params[:photo_add][:picture]
-      if @photo_add.save
-        flash[:success] = "Photo Added!"
-        redirect_to admin_panel_path
-      else
-        render admin_panel
-      end
-	end
+    if @photo_add.save
+      flash[:success] = "Photo Added!"
+      redirect_to admin_panel_path
+    else
+      render admin_panel
+    end
+  end
 
 	def destroy
 		@photo_add.destroy
