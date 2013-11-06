@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20131104104906) do
     t.string   "avatar"
   end
 
-  add_index "photo_adds", ["user_id", "created_at"], name: "index_photo_adds_on_user_id_and_created_at"
+  add_index "photo_adds", ["user_id", "created_at"], name: "index_photo_adds_on_user_id_and_created_at", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"
@@ -36,6 +36,6 @@ ActiveRecord::Schema.define(version: 20131104104906) do
     t.boolean  "admin",           default: false
   end
 
-  add_index "users", ["name"], name: "index_users_on_name", unique: true
+  add_index "users", ["name"], name: "index_users_on_name", unique: true, using: :btree
 
 end
